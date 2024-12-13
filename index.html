@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tarot Site</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script>
+            function loadCard(suit, number) {
+                let name="";
+                switch(suit){
+                    case "none":
+                        name="numbers.jpg";
+                        break;
+                    case "majorArcana":
+                        name="majorArcana"+number +".jpg";
+                        break;
+                    case "wands":
+                        name="wands"+number +".jpg";
+                        break;
+                    case "cups":
+                        name="cups"+number +".jpg";
+                        break;
+                    case "swords":
+                        name="swords"+number +".jpg";
+                        break;
+                    case "pentacles":
+                        name="pentacles"+number +".jpg";
+                        break;
+                    
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <section id="nav">
+            <a href="#introduction">Introduction</a>
+        </section>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>This is a site to allow for easy navigation to tarot card meanings. Along with individual pages for each card, there is also pages for learning groupings of the cards, such as wands, or the number 4</p> 
+
+        </section>
+        <section id="selections">
+            <br><br>
+            <label for="suit">Suit</label>
+            <select id="suit" name="suit">
+                <option value="none">None</option>
+                <option value="majorArcana">Major Arcana</option>
+                <!--in order of tree of life--> 
+                <option value="wands">Wands (Fire)</option>
+                <option value="cups">Cups (Water)</option>
+                <option value="swords">Swords (Air)</option>
+                <option value="pentacles">Pentacles (Earth)</option>
+            </select><br>
+            <label for="number">Number</label>
+            <input 
+                id="number" 
+                name="number" 
+                type="number"
+                min="1"
+                max="24"
+            ><br>
+
+        </section>
+        <section id="card">
+
+        </section>
+        <script src="" async defer></script>
+    </body>
+</html>
