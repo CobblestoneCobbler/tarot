@@ -1,0 +1,24 @@
+body{
+    background-image: url("assets/imgs/backgrounds/galaxyBackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    text-align: center;
+}
+#selections{
+    position: relative;
+    margin-left: 25%;
+    width: 50%;
+    border-radius: 20px;
+    border-style: hidden;
+    background-color: #0d92a3;
+    
+    
+}
+#card{
+    position: relative;
+    margin-left: 10%;
+    width: 80%;
+    border-radius: 30;
+    border-style: hidden;
+    background-image: url("");
+}
