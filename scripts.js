@@ -13,7 +13,7 @@ function loadCard() {
     switch(suit){
         case "none":
             //document.getElementById("card").style.backgroundColor = grey;
-            name="numbers.jpg";
+            name="numbers" +number;
             break;
         case "majorArcana":
             //document.getElementById("card").style.backgroundColor = Purple;
@@ -42,7 +42,7 @@ function loadCard() {
             break;
         
     }
-    let file = "/assets/imgs/tarotCards/" +name + ".jpg";
+    let file = "./assets/imgs/tarotCards/" +name + ".jpg";
     document.getElementById("cardDisplay").alt=name;
     document.getElementById("cardDisplay").src=file;
     
@@ -53,10 +53,7 @@ function loadCard() {
         case "majorArcana-1":
             title = "The Major Arcana";
             document.getElementById("cardName").innerHTML = title;
-            document.getElementById("cardDetails").innerHTML = 
-                `The Major Arcana Tarot cards represent the life lessons, karmic influences and the big archetypal themes that are influencing your life and your soul's journey to enlightenment. The Major Arcana card meanings are deep and complex – in beautiful ways! These Tarot cards truly represent the structure of human consciousness and hold the keys to life lessons passed down through the ages.
-                
-                Also known as the Trump Cards, the Major Arcana cards include 21 numbered cards and 1 unnumbered card (the Fool). The Fool is the main character of the Major Arcana and makes his journey through each of the cards, meeting new teachers and learning new life lessons along the way, and eventually reaching the completion of his journey with the World card. This is known as the Fool's Journey and is a helpful way of understanding the story line of the Major Arcana Tarot card meanings.`;
+            document.getElementById("cardDetails").innerHTML = loadMakeup(suit);
             source ="Biddy";
         break;
         case "majorArcana0":
@@ -274,14 +271,7 @@ function loadCard() {
         case "wands-1":
             title = "Suit of Wands";
             document.getElementById("cardName").innerHTML = title;
-            document.getElementById("cardDetails").innerHTML = 
-                `The Suit of Wands Tarot card meanings are associated with primal energy, spirituality, inspiration, determination, strength, intuition, creativity, ambition and expansion, original thought and the seeds through which life springs forth.
-
-                The Suit of Wands is associated with the element of Fire. Fire is hot, wild, unpredictable, and energetic. It can be creative in helping us to cook food or build tools, or it can be destructive, like a devastating bush fire or house fire.
-
-                Fire is symbolic of passion, energy, enthusiasm, and sexuality. It is a masculine element and reflects the drive and willpower of the masculine energy.
-
-                In a deck of playing cards, Wands corresponds to Clubs.`;
+            document.getElementById("cardDetails").innerHTML = loadMakeup(suit);
             source = "Biddy";
         break;
         case "wands1":
@@ -387,14 +377,7 @@ function loadCard() {
         case "cups-1":
             title = "Suit of Cups";
             document.getElementById("cardName").innerHTML = title;
-            document.getElementById("cardDetails").innerHTML = 
-                `The Suit of Cups Tarot cards deal with the emotional level of consciousness and are associated with love, feelings, relationships and connections.
-
-                The Suit of Cups is associated with the element of water. Water is fluid, agile and ‘in flow' but it's also very powerful and formative. It can be soft and gentle, like waves lapping against the sandy shore, or it can be powerful and even forceful, like a raging river.
-
-                The element of water is symbolic of fluidity, feelings and emotions, intuition, relationships, healing, and cleansing. It is a feminine element and reflects the subtle power that often resides within women. It is receptive, adaptable, purifying and flowing.
-
-                In a deck of playing cards, Cups corresponds to Hearts.`;
+            document.getElementById("cardDetails").innerHTML = loadMakeup(suit);
             source = "Biddy";
         break;
         case "cups1":
@@ -510,14 +493,7 @@ function loadCard() {
         case "swords-1":
             title = "Suit of Swords";
             document.getElementById("cardName").innerHTML = title;
-            document.getElementById("cardDetails").innerHTML = 
-                `The Suit of Swords Tarot cards deal with the mental level of consciousness that is centered around the mind and the intellect. Swords mirror the quality of mind present in your thoughts, attitudes, and beliefs.
-
-                Swords are often double-edged and in this way the Suit of Swords symbolises the fine balance between intellect and power and how these two elements can be used for good or evil. As such, the Swords must be balanced by spirit (Wands) and feeling (Cups) to have the most positive effect.
-
-                The Suit of Swords is associated with the element of Air. Air is intangible and unseen, but also in constant movement. Air can be still and mostly unnoticed, to becoming a breeze or a fierce wind. It is powerful yet refreshing and cleansing. Symbolically, the air element relates to knowledge, action, power, and change. It is a masculine energy that can lead by force and power, even though it remains unseen.
-
-                In a deck of playing cards, Swords corresponds to Spades.`;
+            document.getElementById("cardDetails").innerHTML = loadMakeup(suit);
             source = "Biddy";
         break;
         case "swords1":
@@ -627,12 +603,7 @@ function loadCard() {
         case "pentacles-1":
             title = "Suit of Pentacles";
             document.getElementById("cardName").innerHTML = title;
-            document.getElementById("cardDetails").innerHTML = 
-                `The Suit of Pentacles Tarot cards deal with the physical or external level of consciousness and thus mirror the outer situations of your health, finances, work, and creativity. They have to do with what we make of our outer surroundings – how we create it, shape it, transform it and grow it. On a more esoteric level, Pentacles are associated with the ego, self-esteem and self-image.
-
-                The Suit of Pentacles is associated with the element of Earth. Earth is tactile, earthy and tangible. It creates the foundation from which the planet can grow and develop, and it supports and nurtures the plants and trees. Earth is grounded, stable, supportive and fertile. It is a feminine element that is receptive – it takes in nutrients and sunrays and then uses this energy to sustain the life that grows out of it.
-
-                In a deck of playing cards, Pentacles corresponds to Diamonds.`;
+            document.getElementById("cardDetails").innerHTML = loadMakeup(suit);
             source = "Biddy";
         break;
         case "pentacles1":
@@ -740,6 +711,79 @@ function loadCard() {
             source = "Biddy";
         break;
         
+    }
+
+    //exclude MajorArcana, suit and number descriptions. The add makeup info
+    if(suit == "majorArcana" || number == -1){
+        //hide makeup panel
+    }
+    else{
+        //show makeup panel and populate
 
     }
+}
+function loadMakeup(target){
+    switch (target){
+        case "1":
+            return "";
+        case "2":
+            return "";
+        case "3":
+            return "";
+        case "4":
+            return "";
+        case "5":
+            return "";
+        case "6":
+            return "";
+        case "7":
+            return "";
+        case "8":
+            return "";
+        case "9":
+            return "";
+        case "10":
+            return "";
+        case "11":
+            return "";
+        case "12":
+            return "";
+        case "13":
+            return "";
+        case "14":
+            return "";
+        case "wands":
+            return `The Suit of Wands Tarot card meanings are associated with primal energy, spirituality, inspiration, determination, strength, intuition, creativity, ambition and expansion, original thought and the seeds through which life springs forth.
+
+                The Suit of Wands is associated with the element of Fire. Fire is hot, wild, unpredictable, and energetic. It can be creative in helping us to cook food or build tools, or it can be destructive, like a devastating bush fire or house fire.
+
+                Fire is symbolic of passion, energy, enthusiasm, and sexuality. It is a masculine element and reflects the drive and willpower of the masculine energy.
+
+                In a deck of playing cards, Wands corresponds to Clubs.`;
+        case "cups":
+            return `The Suit of Cups Tarot cards deal with the emotional level of consciousness and are associated with love, feelings, relationships and connections.
+
+                The Suit of Cups is associated with the element of water. Water is fluid, agile and ‘in flow' but it's also very powerful and formative. It can be soft and gentle, like waves lapping against the sandy shore, or it can be powerful and even forceful, like a raging river.
+
+                The element of water is symbolic of fluidity, feelings and emotions, intuition, relationships, healing, and cleansing. It is a feminine element and reflects the subtle power that often resides within women. It is receptive, adaptable, purifying and flowing.
+
+                In a deck of playing cards, Cups corresponds to Hearts.`;
+        case "swords":
+            return `The Suit of Swords Tarot cards deal with the mental level of consciousness that is centered around the mind and the intellect. Swords mirror the quality of mind present in your thoughts, attitudes, and beliefs.
+
+                Swords are often double-edged and in this way the Suit of Swords symbolises the fine balance between intellect and power and how these two elements can be used for good or evil. As such, the Swords must be balanced by spirit (Wands) and feeling (Cups) to have the most positive effect.
+
+                The Suit of Swords is associated with the element of Air. Air is intangible and unseen, but also in constant movement. Air can be still and mostly unnoticed, to becoming a breeze or a fierce wind. It is powerful yet refreshing and cleansing. Symbolically, the air element relates to knowledge, action, power, and change. It is a masculine energy that can lead by force and power, even though it remains unseen.
+
+                In a deck of playing cards, Swords corresponds to Spades.`;
+        case "pentacles":
+            return `The Suit of Pentacles Tarot cards deal with the physical or external level of consciousness and thus mirror the outer situations of your health, finances, work, and creativity. They have to do with what we make of our outer surroundings – how we create it, shape it, transform it and grow it. On a more esoteric level, Pentacles are associated with the ego, self-esteem and self-image.
+
+                The Suit of Pentacles is associated with the element of Earth. Earth is tactile, earthy and tangible. It creates the foundation from which the planet can grow and develop, and it supports and nurtures the plants and trees. Earth is grounded, stable, supportive and fertile. It is a feminine element that is receptive – it takes in nutrients and sunrays and then uses this energy to sustain the life that grows out of it.
+
+                In a deck of playing cards, Pentacles corresponds to Diamonds.`;
+        case "majorArcana":
+            return "";
+    }
+
 }
