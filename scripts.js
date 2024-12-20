@@ -8,47 +8,100 @@ function loadCard() {
         per suit back drops and font styling, number overveiw will be major arcana
 
     */
-    let name="";
+    let name = "";
+    let titleSuit = "";
     // Joins suit and Number to one, making one variable "name"
     switch(suit){
         case "none":
             //document.getElementById("card").style.backgroundColor = grey;
-            name="numbers" +number;
+            name="numbers" + number;
+            
             break;
         case "majorArcana":
             //document.getElementById("card").style.backgroundColor = Purple;
-            name="majorArcana"+number;
+            name = "majorArcana" + number;
+            titleSuit = "Major Arcana";
             //fool is 0
             break;
         case "wands":
             //document.getElementById("card").style.backgroundColor = red;
             if(number == 0){number = -1};
-            name="wands"+number;
+            name = "wands" + number;
+            titleSuit = "Wands";
             break;
         case "cups":
             //document.getElementById("card").style.backgroundColor = Blue;
             if(number == 0){number = -1};
-            name="cups"+number;
+            name = "cups" + number;
+            titleSuit = "Cups";
             break;
         case "swords":
             //document.getElementById("card").style.backgroundColor = white;
             if(number == 0){number = -1};
-            name="swords"+number;
+            name = "swords" + number;
+            titleSuit = "Swords";
             break;
         case "pentacles":
             //document.getElementById("card").style.backgroundColor = brown;
             if(number == 0){number = -1};
-            name="pentacles"+number;
+            name = "pentacles" + number;
+            titleSuit = "Pentacles";
             break;
         
     }
-    let file = "./assets/imgs/tarotCards/" +name + ".jpg";
-    document.getElementById("cardDisplay").alt=name;
-    document.getElementById("cardDisplay").src=file;
+    let file = "./assets/imgs/tarotCards/" + name + ".jpg";
+    document.getElementById("cardDisplay").alt = name;
+    document.getElementById("cardDisplay").src = file;
+    
+    let numberName = "";
+    switch (number){
+        case 1:
+            numberName = "One";
+        break;
+        case 2:
+            numberName = "Two";
+        break;
+        case 3:
+            numberName = "Three";
+        break;
+        case 4:
+            numberName = "Four";
+        break;
+        case 5:
+            numberName = "Five";
+        break;
+        case 6:
+            numberName = "Six";
+        break;
+        case 7:
+            numberName = "Seven";
+        break; 
+        case 8:
+            numberName = "Eight";
+        break;
+        case 9:
+            numberName = "Nine";
+        break;
+        case 10:
+            numberName = "Ten";
+        break;
+        case 11:
+            numberName = "Page";
+        break;
+        case 12:
+            numberName = "Knight";
+        break;
+        case 13:
+            numberName = "Queen";
+        break;
+        case 14:
+            numberName = "King";
+        break;
+    }
     
     let title = "";
     let source = "";
-    //Per Card setup
+    //Per Card setup, can be split, major arcana, then minor arcana (has concatenate titles available instead of a string per)
     switch (name){
         case "majorArcana-1":
             title = "The Major Arcana";
@@ -713,12 +766,20 @@ function loadCard() {
         
     }
 
+ 
+    
     //exclude MajorArcana, suit and number descriptions. The add makeup info
-    if(suit == "majorArcana" || number == -1){
+    if((suit == "majorArcana" || number == -1) || suit == "none"){
         //hide makeup panel
+        document.getElementById("makeup").style.display = "none";
     }
     else{
         //show makeup panel and populate
+        document.getElementById("makeup").style.display = "block";
+        document.getElementById("makeupSuitTitle").innerHTML = titleSuit;
+        document.getElementById("makeupSuitDetails").innerHTML = loadMakeup(suit);
+        document.getElementById("makeupNumberTitle").innerHTML = numberName;
+        document.getElementById("makeupNumberDetails").innerHTML = loadMakeup(number);
 
     }
 }
