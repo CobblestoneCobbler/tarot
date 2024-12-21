@@ -4,6 +4,9 @@ body{
     background-attachment: scroll;
     text-align: center;
 }
+p{
+    font-size: small;
+}
 #selections{
     position: relative;
     margin-left: 25%;
@@ -21,4 +24,12 @@ body{
     border-radius: 30;
     border-style: hidden;
     background-color: grey;
+}
+table{
+    margin-left: 15%;
+    margin-right: 15%;
+    width : 70%;
+}
+th, td{
+    width: 35%;
 }
