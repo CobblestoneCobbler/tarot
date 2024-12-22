@@ -688,8 +688,13 @@ function loadCard() {
             source = "Biddy";
             break;
         default:
-            if(suit === "none"){
-                title = "The Number " + numberName;
+            if(suit === "none" ){
+                if(number<10){
+                    title = "The Number " + numberName;
+                }
+                else{
+                    title = "The Royal Court, " + numberName;
+                }
                 document.getElementById("cardDetails").innerHTML = loadMakeup(number);
             }
             else{
@@ -717,24 +722,25 @@ function loadCard() {
 }
 function loadMakeup(target){
     switch (target){
+        //Numerology used https://www.worldnumerology.com/numerology-single-digit-numbers/
         case "1":
-            return "One";
+            return `Among the nine single-digit numbers, the 1 holds a special place. From a spiritual perspective, it is the number of creation, the primal force from which all other numbers spring forth.`;
         case "2":
-            return "Two";
+            return `The most feminine among all numbers, the 2 is also the most underestimated -- at least, when it comes to power and strength. It is almost always gentle, tactful, diplomatic, forgiving and understanding.`;
         case "3":
-            return "";
+            return `The number 3 is like a gifted teenager who is still under the protection of their parents: a bit spoiled, scattered and perpetually in need of guidance. However, the most obvious traits of the 3 are in the creative field.`;
         case "4":
-            return "";
+            return `The 4 is without a doubt the most stable, grounded number, reflecting strength and stability. It's chief characteristics are dependability, productivity, punctuality and obedience. It is trustworthy, patient, conventional and detail oriented.`;
         case "5":
-            return "";
+            return `The number 5 is the most dynamic and energetic of all the single-digit numbers. It is unpredictable, always in motion and constantly in need of change. Although it is molded from an almost equal mix of masculine and feminine qualities.`;
         case "6":
-            return "";
+            return `While the 6 is considered the most harmonious of all single-digit numbers, it is not without its flaws and upsets. The most important influence of the 6 is its loving and caring nature. It is properly nicknamed the motherhood number.`;
         case "7":
-            return "";
+            return `The number 7 is the seeker, thinker, the searcher of Truth (notice the capital "T"). The 7 doesn't take anything at face value - always trying to understand the underlying hidden truths. The 7 intuitively knows nothing is what it seems.`;
         case "8":
-            return "";
+            return `The number 8 is perhaps the most misunderstood of all single-digit numbers, as novices and numerology professionals alike seem to hammer on the "money and power" image of the 8.`;
         case "9":
-            return "";
+            return `Ordinarily, I keep the math to a minimum when I discuss an aspect of Numerology. In the case of the number 9, however, the math highlights a philosophical observation that is unique and very revealing. So bear with me, please.`;
         case "10":
             return "";
         case "11":
